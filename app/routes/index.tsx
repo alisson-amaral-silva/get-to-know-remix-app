@@ -23,33 +23,34 @@ export default function Index() {
           <Button type="submit">Change Theme</Button>
         </Form>
       </div>
-      <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
+      <div>
         <h1>Welcome to Remix</h1>
-        <ul>
-          <li>
-            <a
-              target="_blank"
-              href="https://remix.run/tutorials/blog"
-              rel="noreferrer"
-            >
-              15m Quickstart Blog Tutorial
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://remix.run/tutorials/jokes"
-              rel="noreferrer"
-            >
-              Deep Dive Jokes App Tutorial
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-              Remix Docs
-            </a>
-          </li>
-        </ul>
+        <div className="container">
+          <label htmlFor="uname">
+            <b>Username</b>
+          </label>
+          <input type="text" placeholder="Username" name="uname" required />
+
+          <label htmlFor="email">
+            <b>Email</b>
+          </label>
+          <input type="text" placeholder="Email" name="email" required />
+
+          <label htmlFor="psw">
+            <b>Password</b>
+          </label>
+          <input type="password" placeholder="Password" name="psw" required />
+
+          <label htmlFor="cpsw">
+            <b>Confirm Password</b>
+          </label>
+          <input type="password" placeholder="Confirm Password" name="cpsw" required />
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked={true} name="remember" /> Remember me
+          </label>
+        </div>
       </div>
     </>
   )

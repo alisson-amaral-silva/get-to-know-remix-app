@@ -1,3 +1,25 @@
 {
+  "globals": {
+    "cy": true
+  },
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "jest": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "extends": ["@remix-run/eslint-config", "@remix-run/eslint-config/node"]
 }
