@@ -36,7 +36,7 @@ const TextField = ({
       <Wrapper disabled={disabledInput} errorMessage={!!errorMessage}>
         {!!label && <Label htmlFor={name}>{label}</Label>}
         <TextFieldWrapper>
-          {!!icon && <Icon iconPosition={iconPosition}>{icon}</Icon>}
+          {!!icon && <Icon className="svg-icon" iconPosition={iconPosition}>{icon}</Icon>}
           <Input
             type="text"
             onChange={onChange}

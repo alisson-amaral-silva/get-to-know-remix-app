@@ -2,7 +2,9 @@ import type { ActionFunction } from '@remix-run/node'
 import { redirect } from '@remix-run/node'
 import { Form } from '@remix-run/react'
 import { Button } from '~/components/Button'
+import TextField from '~/components/TextField'
 import { colorPreferenceCookie, getColorPreference } from '~/cookies'
+import { AiOutlineMail } from 'react-icons/ai'
 
 export const action: ActionFunction = async ({ request }) => {
   const currentColorScheme = await getColorPreference(request)
@@ -10,8 +12,8 @@ export const action: ActionFunction = async ({ request }) => {
 
   return redirect(request.url, {
     headers: {
-      'Set-Cookie': await colorPreferenceCookie.serialize(newColorScheme),
-    },
+      'Set-Cookie': await colorPreferenceCookie.serialize(newColorScheme)
+    }
   })
 }
 
@@ -21,6 +23,15 @@ export default function Index() {
       <div>
         <Form method="post">
           <Button type="submit">Change Theme</Button>
+          <div style={{ maxWidth: 300, padding: 15 }}>
+            <TextField
+              iconPosition="left"
+              icon={<AiOutlineMail />}
+              placeholder="john.cage@gmail.com"
+              label="E-mail"
+              name="username"
+            />
+          </div>
         </Form>
       </div>
       <div>
@@ -44,12 +55,14 @@ export default function Index() {
           <label htmlFor="cpsw">
             <b>Confirm Password</b>
           </label>
-          <input type="password" placeholder="Confirm Password" name="cpsw" required />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="cpsw"
+            required
+          />
 
           <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked={true} name="remember" /> Remember me
-          </label>
         </div>
       </div>
     </>
