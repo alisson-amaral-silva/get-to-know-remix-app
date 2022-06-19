@@ -21,10 +21,14 @@ export const { styled, createTheme, globalCss, getCssText, theme } =
       },
       colors: {
         text: '#191919',
-        bgBody: '#f8f9fa',
+        bgBody: '#FFFFFF',
+        lightBg:'#F9FAFC',
         red: '#FF6347',
         black: '#030517',
+        white: '#FFFFFF',
         lightGray: '#EAEAEA',
+        primary: '#42C3A7',
+        secondary: '#F231A5',
         anchor: 'DarkGoldenRod'
       }
     }
@@ -33,9 +37,13 @@ export const { styled, createTheme, globalCss, getCssText, theme } =
 export const darkTheme = createTheme('dark', {
   colors: {
     text: '#f8f9fa',
-    bgBody: '#191919',
+    bgBody: '#192748',
+    lightBg:'#415174',
     red: '#FF6347',
     black: '#030517',
+    white: '#FFFFFF',
+    primary: '#42C3A7',
+    secondary: '#F231A5',
     lightGray: '#EAEAEA',
     anchor: 'BlanchedAlmond'
   },

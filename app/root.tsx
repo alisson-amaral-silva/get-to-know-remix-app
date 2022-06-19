@@ -13,7 +13,7 @@ import {
   useLoaderData
 } from '@remix-run/react'
 import { getColorPreference } from './cookies'
-import { Body } from './styles'
+import { Body, Html } from './styles'
 
 export const headers: HeadersFunction = () => ({
   'Accept-CH': 'Sec-CH-Prefers-Color-Preference'
@@ -33,7 +33,7 @@ export default function App() {
   const { colorScheme } = useLoaderData()
 
   return (
-    <html lang="en">
+    <Html lang="en">
       <head>
         <Meta />
         <Links />
@@ -51,6 +51,6 @@ export default function App() {
         <Scripts />
         <LiveReload />
       </Body>
-    </html>
+    </Html>
   )
 }

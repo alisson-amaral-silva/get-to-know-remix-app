@@ -8,7 +8,7 @@ export const TextFieldWrapper = styled('div', {
   borderColor: '$lightGray',
   padding: '0 1rem',
   '&:focus-within': {
-    boxShadow: '0 0 0.5rem #F231A5'
+    boxShadow: '0 0 0.5rem $colors$primary'
   },
   height: 45,
 })
@@ -39,7 +39,7 @@ export const Input = styled('input', {
   color: '$black',
   fontFamily: 'Poppins',
   padding: '0.8rem 0',
-  fontSize: '1rem',
+  fontSize: '1.6rem',
   background: 'transparent',
   border: '0',
   outline: 'none',
@@ -52,7 +52,7 @@ export const Input = styled('input', {
 
 export const Label = styled('label', {
   color: '$black',
-  fontSize: '1.2rem',
+  fontSize: '1.4rem',
   cursor: 'pointer',
   fontFamily: '$fontFamily'
 })
@@ -63,6 +63,7 @@ export const ErrorMessage = styled('p', {
 })
 
 export const Wrapper = styled('div', {
+  width: '100%',
   variants: {
     errorMessage: {
       true: {
