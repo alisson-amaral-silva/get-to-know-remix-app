@@ -1,7 +1,6 @@
 import type { ActionFunction } from '@remix-run/node'
 import { redirect } from '@remix-run/node'
 import { Form } from '@remix-run/react'
-import TextField from '~/components/TextField'
 import { colorPreferenceCookie, getColorPreference } from '~/cookies'
 import { AiOutlineMail } from 'react-icons/ai'
 import FormSignUp from '~/components/FormSignUp'
@@ -24,15 +23,6 @@ export default function Index() {
         <FormSignUp />
         <Form method="post">
           <Button size="large" type="submit">Change Theme</Button>
-          <div style={{ maxWidth: 300, padding: 15 }}>
-            <TextField
-              iconPosition="left"
-              icon={<AiOutlineMail />}
-              placeholder="john.cage@gmail.com"
-              label="E-mail"
-              name="username"
-            />
-          </div>
         </Form>
     </>
   )

@@ -5,7 +5,7 @@ type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
   | ButtonHTMLAttributes<HTMLButtonElement>
 
-export type WrapperProps = { hasIcon: boolean } & Pick<
+export type WrapperProps = { hasicon: boolean } & Pick<
   ButtonProps,
   'size' | 'fullWidth' | 'minimal'
 >
@@ -33,7 +33,7 @@ const Button: React.ForwardRefRenderFunction<WrapperProps, ButtonProps> = (
     minimal={minimal}
     size={size}
     fullWidth={fullWidth}
-    hasIcon={!!icon}
+    hasicon={!!icon}
     {...props}
     ref={ref}
   >

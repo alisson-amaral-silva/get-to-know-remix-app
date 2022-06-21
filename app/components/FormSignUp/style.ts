@@ -14,15 +14,7 @@ export const Sidebar = styled('div', {
   justifyContent: 'center'
 })
 
-export const Form = styled('form', {
-    width: '100%',
-    maxWidth: 480,
-    padding: 64,
-    display: 'flex',
-    flexFlow: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
-  })
+
 
 export const Title = styled('h1', {
   color: '$text',

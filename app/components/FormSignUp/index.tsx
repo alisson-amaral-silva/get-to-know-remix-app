@@ -1,39 +1,60 @@
 import { AiOutlineMail, AiFillLock } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
-import TextField from '../TextField'
-import { Wrapper, Sidebar, Title, Subtitle, ImageWrapper, Form } from './style'
+import { Wrapper, Sidebar, Title, Subtitle, ImageWrapper } from './style'
+import { FormSchema } from '~/utils/Forms/registerFormSchema'
+import Button from '../Button'
+import Form from '../Form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hook-form'
+import InputComponent from '../InputComponent'
 
 const FormSignUp = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({ resolver: yupResolver(FormSchema) })
+
+  const onSubmit = (data: any) => console.log(data)
+
   return (
     <Wrapper>
-      <Form>
-        <TextField
-          iconPosition="left"
-          icon={<AiOutlineMail />}
-          placeholder="john.cage@gmail.com"
+      <Form onSubmit={onSubmit} register={register} handleSubmit={handleSubmit}>
+        <InputComponent
+          placeholder="john@gmail.com"
           label="E-mail"
-          name="username"
+          type="email"
+          name="email"
+          error={errors.email?.message}
         />
-        <TextField
-          iconPosition="left"
-          icon={<CgProfile />}
+
+        <InputComponent
           placeholder="John"
           label="Name"
           name="name"
+          error={errors.name?.message}
         />
-        <TextField
-          iconPosition="left"
-          icon={<AiFillLock />}
+
+        <InputComponent
+          placeholder="JohnSmithers"
+          label="Username"
+          name="username"
+          error={errors.username?.message}
+        />
+
+        <InputComponent
           placeholder="Password"
-          label="Password"
+          type="password"
           name="password"
+          label="Password"
+          error={errors.password?.message}
         />
-        <TextField
-          iconPosition="left"
-          icon={<AiFillLock />}
+        <InputComponent
           placeholder="Confirm Password"
+          type="password"
+          name="confirmPassword"
           label="Confirm Password"
-          name="confirm-password"
+          error={errors.confirmPassword?.message}
         />
       </Form>
       <Sidebar>

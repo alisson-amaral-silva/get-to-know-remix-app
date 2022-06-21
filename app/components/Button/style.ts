@@ -46,7 +46,7 @@ export const Wrapper = styled('button', {
         color: '$colors$white'
       }
     },
-    withIcon: {
+    hasicon: {
       true: {
         '& svg': {
           width: ' 1.5rem',
